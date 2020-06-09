@@ -6,10 +6,24 @@ Created on Tue Jun  9 19:18:49 2020
 """
 import sys
 
+""" 
+as the scriptIO library and the extract library are not in the original directory, we add the folders to the system path, so
+that the interpreter can search for the files there
+"""
+
 sys.path.append('scriptIO')
 sys.path.append('extract')
+
+""" 
+importing the required libraries
+"""
+
 import scriptIO
 import extract
+
+""" 
+imported to iterate over two lists simulateneously
+"""
 import itertools
 
 
