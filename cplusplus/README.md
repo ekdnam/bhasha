@@ -5,6 +5,11 @@ A library that that transforms python code into cpp code.
 The 'temp.py' file metamorphosed into 'temp.cpp'.
 
 ## Libraries created
+
+* cpp
+
+Creates a CPP class, which does all the heavy handed work of generating code.
+
 * scriptIO
 
 Taking the input and producing output of a script.
