@@ -12,7 +12,7 @@ function readScript() has the following parameters:
 
 1) filename (string): the name of the file from which text to be extracted
 
-returns: list of strings new lines split with '\n'
+returns: list of strings with newlines split as '\n'
 """
 def readScript(filename):
     # open file to read
