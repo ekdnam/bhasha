@@ -4,6 +4,9 @@ Created on Tue Jun  9 19:18:49 2020
 
 @author: vgadi
 """
+
+""" a homage to bjarne stroustrup, the creator of the c++ language"""
+
 import sys
 
 """ 
