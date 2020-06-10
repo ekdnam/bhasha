@@ -20,23 +20,28 @@ def extractFromScript(text):
     keywords = []
     texts = []
     for line in text:
+        try:
+            """
+            get value before the parentheses
+            """
+            keyword = re.compile("(.*?)\s*\(")
+            keyword = keyword.match(line)
+            keyword = keyword.group(1)
+            keywords.append(keyword)
         
-        """
-        get value before the parentheses
-        """
-        keyword = re.compile("(.*?)\s*\(")
-        keyword = keyword.match(line)
-        keyword = keyword.group(1)
-        keywords.append(keyword)
-        
-        """
-        get value in the parentheses
-        """
-        text = re.compile(".*?\((.*?)\)")
-        text = text.match(line)
-        text = text.group(1)
-        texts.append(text)
-        
+            """
+            get value in the parentheses
+            """
+            text = re.compile(".*?\((.*?)\)")
+            text = text.match(line)
+            text = text.group(1)
+            texts.append(text)
+            
+        except:
+            keywords, texts = -1, -1
+            print("An error occurred while applying regular expressions")
+            raise
+            
     return keywords, texts
 
 """
@@ -44,8 +49,3 @@ removes the comments from the python script
 def comment(text):
     
 """
-
-"""
-keywords, texts = extractFromScript(script)
-"""
-    
