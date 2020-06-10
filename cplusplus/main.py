@@ -1,3 +1,4 @@
+""" a homage to bjarne stroustrup, the creator of the c++ language"""
 from stroustrup import CPP
 
 def __main__():
