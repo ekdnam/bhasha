@@ -18,14 +18,14 @@ sys.path.append('scriptIO')
 sys.path.append('extract')
 
 """ 
-importing the required libraries
+importing the custom libraries
 """
 
 import scriptIO
 import extract
 
 """ 
-imported to iterate over two lists simulateneously
+importing to iterate over two lists simulateneously
 """
 import itertools
 
