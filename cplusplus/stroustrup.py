@@ -4,29 +4,12 @@ Created on Tue Jun  9 19:18:49 2020
 
 @author: vgadi
 """
-
-""" a homage to bjarne stroustrup, the creator of the c++ language"""
-
 import sys
-
-""" 
-as the scriptIO library and the extract library are not in the original directory, we add the folders to the system path, so
-that the interpreter can search for the files there
-"""
 
 sys.path.append('scriptIO')
 sys.path.append('extract')
-
-""" 
-importing the custom libraries
-"""
-
 import scriptIO
 import extract
-
-""" 
-importing to iterate over two lists simulateneously
-"""
 import itertools
 
 
@@ -34,45 +17,56 @@ class CPP:
 
     # default constructor
     def __init__(self, userLibraries = ['iostream'], filename = 'temp.py'):
-        """ the filename from where the python code is to be read """
-        self.filename = filename
+        try:
+            """ the filename from where the python code is to be read """
+            self.filename = filename
         
-        """ the list of c++ libraries to be included """
-        self.libraries = userLibraries
+            """ the list of c++ libraries to be included """
+            self.libraries = userLibraries
+            
+            """ an empty string for initializing cpp code """
+            self.generatedCode = ''
+            
+            """ the extension of the file to be generated """
+            self.extension = '.cpp'
+            
+            """ to add new lines """
+            self.newline = '\n'
+            
+            """ an empty string for initializing the cpp libraries """
+            self.libCode = ''
+            """ 
+            the boilerplate syntax for a .cpp file 
+            """
+            
+            # int main()
+            self.int_main = 'int main(void){'
+            
+            """
+            as there is a difference in syntax between python and cpp, we have to
+            write some minor syntax by ourselves
+            """
+            self.semicolon = ' ; '
+            self.cout = 'cout << '
+            self.starterCode = ''
+            self.endCode = 'return 0; \n}'
+            self.coutNewline = "cout << endl;"
         
-        """ an empty string for initializing cpp code """
-        self.generatedCode = ''
-        
-        """ the extension of the file to be generated """
-        self.extension = '.cpp'
-        
-        """ to add new lines """
-        self.newline = '\n'
-        
-        """ an empty string for initializing the cpp libraries """
-        self.libCode = ''
-        """ 
-        the boilerplate syntax for a .cpp file 
-        """
-        
-        # int main()
-        self.int_main = 'int main(void){'
-        
-        """
-        as there is a difference in syntax between python and cpp, we have to
-        write some minor syntax by ourselves
-        """
-        self.semicolon = ' ; '
-        self.cout = 'cout << '
-        self.starterCode = ''
-        self.endCode = 'return 0; \n}'
-        self.coutNewline = "cout << endl;"
-        
-        """ generating the code for including the libraries """
-        self.__createLibraries__()
-        
-        """ including the libraries and also the int main(void) part """
-        self.__createStarterCode__()
+        except:
+            print('An unexpected error occurred while creating the class object.')
+            raise
+        try:
+            """ generating the code for including the libraries """
+            self.__createLibraries__()
+        except:
+            print("An unexpected error occurred while creating the libraries")
+            raise
+            
+        try:
+            """ including the libraries and also the int main(void) part """
+            self.__createStarterCode__()
+        except:
+            print("An unexpected error occurred while creating the starter code.")
 
     
     """ creates the required include library syntax """
@@ -143,4 +137,4 @@ class CPP:
         self.generatedCode += self.endCode
         
         # create the required '.cpp' file from the generated code
-        scriptIO.createScript(extension = '.cpp', code = self.generatedCode, filename = 'temp')
+        scriptIO.createScript(extension = '.cpp', code = self.generatedCode)
