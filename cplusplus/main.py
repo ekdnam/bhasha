@@ -1,4 +1,4 @@
-from cpp import CPP
+from stroustrup import CPP
 
 def __main__():
     lang = CPP()
