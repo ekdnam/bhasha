@@ -2,7 +2,7 @@
 
 A library that that transforms python code into cpp code.
 
-The 'temp.py' file metamorphosed into 'temp.cpp'.
+The 'temp.py' file gets metamorphosed into 'temp.cpp'.
 
 ## Libraries created
 
