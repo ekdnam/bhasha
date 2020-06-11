@@ -2,7 +2,7 @@
 
 A library that that transforms python code into cpp code.
 
-The 'temp.py' file metamorphosed into 'temp.cpp'.
+The 'temp.py' file gets metamorphosed into 'temp.cpp'.
 
 ## Libraries created
 
@@ -19,4 +19,4 @@ Taking the input and producing output of a script.
 Extracting text from the code. We get two lists of strings, one is a list of keywords ('print' etc), 
 and a list of texts (the text enclosed in parentheses).
 
-This is not a stable version as exception handling has not been implemented.
+Currently, the code is being tested for bugs.
