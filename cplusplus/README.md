@@ -19,4 +19,4 @@ Taking the input and producing output of a script.
 Extracting text from the code. We get two lists of strings, one is a list of keywords ('print' etc), 
 and a list of texts (the text enclosed in parentheses).
 
-This is not a stable version as exception handling has not been implemented.
+This is not a stable version as exception handling and comment handling has not been implemented.
