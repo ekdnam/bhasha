@@ -6,7 +6,7 @@ Created on Tue Jun  9 20:49:09 2020
 """
 
 import sys
-
+""" stable """
 """
 reads a .py script
 
@@ -33,6 +33,7 @@ def readScript(filename):
         raise
 
 
+""" stable """
 """
 creating the required file
 
