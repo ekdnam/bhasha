@@ -6,7 +6,7 @@ The 'temp.py' file gets metamorphosed into 'temp.cpp'.
 
 ## Libraries created
 
-* cpp
+* stroustrup
 
 Creates a CPP class, which does all the heavy handed work of generating code.
 
